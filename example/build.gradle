@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion sdkVersion
+    buildToolsVersion buildTools
+
+    defaultConfig {
+        applicationId "io.realm.examples.adapters"
+        minSdkVersion 15
+        targetSdkVersion sdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation project(':adapters')
+    implementation "androidx.appcompat:appcompat:${androidXVersion}"
+    implementation "androidx.recyclerview:recyclerview:${androidXVersion}"
+}
